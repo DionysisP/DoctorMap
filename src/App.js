@@ -19,9 +19,13 @@ function App() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {Data.results.map(doc => {
-          const doctorAge = doc.date_of_birth[0] + doc.date_of_birth[1] + doc.date_of_birth[2] + doc.date_of_birth[3];
-          const doctorExperience = doc.practice_start_date[0] + doc.practice_start_date[1] + doc.practice_start_date[2] + doc.practice_start_date[3];
-
+          
+          //Convert json date string in date
+          const doctorAge = new Date(doc.date_of_birth).getFullYear();
+          const doctorExperience = new Date(doc.practice_start_date).getFullYear();
+       
+          
+         
           return (
             <Marker key={doc.id} position={[doc.latitude, doc.longitude]}>
               <Popup >
