@@ -20,19 +20,18 @@ function App() {
         />
         {Data.results.map(doc => {
           
-          //Convert json date string in date
+          //Convert json date string into date
           const doctorAge = new Date(doc.date_of_birth).getFullYear();
           const doctorExperience = new Date(doc.practice_start_date).getFullYear();
        
-          
-         
+    
           return (
             <Marker key={doc.id} position={[doc.latitude, doc.longitude]}>
               <Popup >
                 <img style={{ 'width': '50px', 'height': '50px' }} src="" alt="" />
-                <h3>{doc.first_name + " " + doc.last_name}<br /></h3>
+                <h3>{doc.first_name + " " + doc.last_name}</h3><br />
                 {doc.street_address + " " + doc.city + ", " + doc.country}<br />
-                <h5>{currentDate - doctorAge}{" ετών "} {currentDate - doctorExperience}{" χρόνια εμπειρίας "} {doc.languages}</h5>
+                <h5>{currentDate - doctorAge}{" ετών, "} {currentDate - doctorExperience}{" χρόνια εμπειρίας "} {doc.languages}</h5>
               </Popup>
             </Marker>
           );
