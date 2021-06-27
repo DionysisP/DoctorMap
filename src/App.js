@@ -4,8 +4,8 @@ import Data from './data/doctors.json';
 
 function App() {
 
-  var centerLat = Data.results[1].latitude;
-  var centerLong = Data.results[1].longitude;
+  var centerLat = Data.results[0].latitude;
+  var centerLong = Data.results[0].longitude;
 
 
 
@@ -14,7 +14,6 @@ function App() {
   return (
     <React.Fragment>
       <MapContainer center={[centerLat, centerLong]} zoom={13} scrollWheelZoom={true}>
-        
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
