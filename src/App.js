@@ -11,7 +11,6 @@ function App() {
   //Get current Year
   const currentDate = new Date().getFullYear()
 
-
   return (
     <React.Fragment>
       <MapContainer center={[centerLat, centerLong]} zoom={13} scrollWheelZoom={true}>
@@ -20,14 +19,13 @@ function App() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {Data.results.map(doc => {
-
           const doctorAge = doc.date_of_birth[0] + doc.date_of_birth[1] + doc.date_of_birth[2] + doc.date_of_birth[3];
           const doctorExperience = doc.practice_start_date[0] + doc.practice_start_date[1] + doc.practice_start_date[2] + doc.practice_start_date[3];
+
           return (
-    
             <Marker key={doc.id} position={[doc.latitude, doc.longitude]}>
               <Popup >
-                <img style={{'width': '50px', 'height': '50px'}} src=""></img>
+                <img style={{ 'width': '50px', 'height': '50px' }} src="" alt=""></img>
                 <h3>{doc.first_name + " " + doc.last_name}{<br></br>}</h3>
                 {doc.street_address + " " + doc.city + ", " + doc.country}{<br></br>}
                 {currentDate - doctorAge}{" ετών "}
