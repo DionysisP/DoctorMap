@@ -25,12 +25,10 @@ function App() {
           return (
             <Marker key={doc.id} position={[doc.latitude, doc.longitude]}>
               <Popup >
-                <img style={{ 'width': '50px', 'height': '50px' }} src="" alt=""></img>
-                <h3>{doc.first_name + " " + doc.last_name}{<br></br>}</h3>
-                {doc.street_address + " " + doc.city + ", " + doc.country}{<br></br>}
-                {currentDate - doctorAge}{" ετών "}
-                {currentDate - doctorExperience}{" χρόνια εμπειρίας "}
-                {doc.languages}
+                <img style={{ 'width': '50px', 'height': '50px' }} src="" alt="" />
+                <h3>{doc.first_name + " " + doc.last_name}<br /></h3>
+                {doc.street_address + " " + doc.city + ", " + doc.country}<br />
+                <h5>{currentDate - doctorAge}{" ετών "} {currentDate - doctorExperience}{" χρόνια εμπειρίας "} {doc.languages}</h5>
               </Popup>
             </Marker>
           );
