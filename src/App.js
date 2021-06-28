@@ -33,7 +33,7 @@ export default function App() {
                   <h3>{doc.first_name + ' ' + doc.last_name}</h3><br />
                 </div>
                 <h4>{doc.street_address}</h4><br />
-                <h4 style={{'color' : '#5a5a5a'}}>{doc.city + ' ' + doc.country + ', TK: ' + doc.zip_code}</h4>
+                <h4 style={{'color' : '#5a5a5a'}}>{doc.city + ', ' + doc.country + ' TK: ' + doc.zip_code}</h4>
                 <h5>{currentDate - doctorAge}{" ετών, "} {currentDate - doctorExperience}{" χρόνια εμπειρίας "} {doc.languages}</h5>
               </Popup>
             </Marker>
