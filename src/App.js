@@ -2,14 +2,14 @@ import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import Data from './data/doctors.json';
 
-function App() {
+export default function App() {
 
   //Declare centered coordinates
-  var centerLat = Data.results[0].latitude;
-  var centerLong = Data.results[0].longitude;
+  const centerLat = Data.results[0].latitude;
+  const centerLong = Data.results[0].longitude;
 
   //Get current Year
-  const currentDate = new Date().getFullYear()
+  const currentDate = new Date().getFullYear();
 
   return (
     <React.Fragment>
@@ -19,12 +19,11 @@ function App() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {Data.results.map(doc => {
-          
-          //Convert json date string into date
+
+          //Convert json string into date
           const doctorAge = new Date(doc.date_of_birth).getFullYear();
           const doctorExperience = new Date(doc.practice_start_date).getFullYear();
-       
-    
+
           return (
             <Marker key={doc.id} position={[doc.latitude, doc.longitude]}>
               <Popup >
@@ -36,11 +35,8 @@ function App() {
             </Marker>
           );
         })}
-
       </MapContainer>
     </React.Fragment>
 
   );
 }
-
-export default App;
