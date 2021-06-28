@@ -8,8 +8,13 @@ code {
     monospace;
 }
 
+
+.doctor{
+  display:inline-flex;
+  margin-bottom:10px;
+}
 .leaflet-container{
-  width: 70vw;
+  width: 100vw;
   height: 70vh;
 }
 
@@ -21,6 +26,9 @@ code {
 .leaflet-container a.leaflet-popup-close-button{
   padding : 10px 10px 0 0;
   font:22px/20px Tahoma, Verdana, sans-serif;
+}
+h3{
+  padding: 3px 0 0 15px;
 }
 
 h5{
